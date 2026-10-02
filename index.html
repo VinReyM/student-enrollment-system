@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Enrollment System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="school">Baguio City Colleges</p>
+    <h1>Student Enrollment System</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Enroll a student</h2>
+      <form id="enrollForm" novalidate>
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input type="text" id="studentId" inputmode="numeric" placeholder="Numbers only, at least 5 digits">
+          <span class="error" id="studentIdError"></span>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="prefix">Prefix <small>(optional)</small></label>
+            <input type="text" id="prefix" placeholder="e.g. Mr.">
+            <span class="error" id="prefixError"></span>
+          </div>
+          <div class="field">
+            <label for="suffix">Suffix <small>(optional)</small></label>
+            <input type="text" id="suffix" placeholder="e.g. Jr.">
+            <span class="error" id="suffixError"></span>
+          </div>
+        </div>
+
+        <div class="row three">
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName">
+            <span class="error" id="lastNameError"></span>
+          </div>
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName">
+            <span class="error" id="firstNameError"></span>
+          </div>
+          <div class="field">
+            <label for="middleName">Middle Name <small>(optional)</small></label>
+            <input type="text" id="middleName">
+            <span class="error" id="middleNameError"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@example.com">
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="course">Course</label>
+            <select id="course">
+              <option value="">Select a course</option>
+              <option>BSIT</option>
+              <option>BSCS</option>
+              <option>BMMA</option>
+              <option>BSAIS</option>
+            </select>
+            <span class="error" id="courseError"></span>
+          </div>
+          <div class="field">
+            <label for="year">Year Level</label>
+            <select id="year">
+              <option value="">Select a year</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+            </select>
+            <span class="error" id="yearError"></span>
+          </div>
+        </div>
+
+        <div class="field" id="majorField" hidden>
+          <label for="major">BSIT Major</label>
+          <select id="major">
+            <option value="">Select a major</option>
+            <option>Net Sec</option>
+            <option>Web Tech</option>
+            <option>ERP</option>
+          </select>
+          <span class="error" id="majorError"></span>
+        </div>
+
+        <button type="submit">Enroll student</button>
+        <p class="success" id="successMsg" role="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Enrolled students</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Student ID</th><th>Name</th><th>Email</th><th>Course</th><th>Year</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr class="empty"><td colspan="6">No students enrolled yet. Fill in the form above to add one.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
